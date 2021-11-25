@@ -51,6 +51,7 @@ a {
 .calculadora {
 				width: 500px;
 				height: 670px;
+                                border-radius: 10px;
 				background-color: #1E1E1E;
 				display: flex;
 				flex-wrap: wrap;
