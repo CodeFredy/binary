@@ -1,0 +1,75 @@
+<!!DOCTYPE html>
+<html lang="es">
+<head>
+				<meta charset="UTF-8">
+				<title>Título de la página</title>
+			 <link rel="stylesheet" type="text/css" href="../css/prue.css"></link>
+</head>
+<body>
+				<div id="box1">
+								<h1 class="title">Fredy</h1>
+								<div class="title2">
+												<a href="https://youtu.be/f5Onw5qTOz4">
+												¿Que es un número binario?
+								</a>
+								</div>
+				</div>
+				<div id="box2">
+								<div class="calculadora">
+												<h2 class="text_sub">Convertir enteros a binarios</h2>
+												<h3 class="entero">Introduzca un número entero:</h3>
+												<form name="form" action="" method="get">
+																<input type="number" name="resp" class="input1" id="wage">
+												</form>
+												<h2 class="binario">Binario:</h2>
+												<div class="input2">
+																<p class="bin"></p>
+												</div>
+												<button class="convert"
+												        onClick="convert()">
+																CONVERTIR
+												</button>
+								</div>
+				</div>
+				
+				<script type="text/javascript">
+								var entero = null;
+								var binary = document.querySelector(".bin");
+								
+								const wage = document.getElementById('wage');
+								wage.addEventListener('keydown', (e) => {
+								if (e.key === 'Enter') {
+												validate(e);
+								}});
+								
+								function convert() {
+												entero = document.getElementsByName("resp")[0].value;
+												var n = parseInt(entero);
+												var r = "";
+												while (n>0) {
+																r = (n%2) + r;
+																n = parseInt(n/2);
+												}
+												//var r = convertToBinary(n);
+												binary.innerHTML = r;
+								}
+								//otro metodo
+								function convertToBinary(x) {
+												let bin = 0;
+												let rem, i = 1, step = 1;
+												while (x != 0) {
+																rem = x % 2;
+																x = parseInt(x / 2);
+																bin = bin + rem * i;
+																i = i * 10;
+												}
+												return bin;
+								}
+								function validate(e) {
+												const text = e.target.value;
+												//validation of the input...
+												convert();
+								}
+				</script>
+</body>
+</html>
